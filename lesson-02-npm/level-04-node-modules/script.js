@@ -1,1 +1,11 @@
-import {} from "node:os";
+import { cpus, totalmem, freemem, machine, platform } from "node:os";
+const cpuType = cpus();
+const memoryTot = totalmem();
+const memoryLeft = freemem();
+const machineType = machine();
+const platformType = platform();
+console.log(cpuType);
+console.log(memoryTot);
+console.log(memoryLeft);
+console.log(machineType);
+console.log(platformType);
