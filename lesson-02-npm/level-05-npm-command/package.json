@@ -1,0 +1,19 @@
+{
+  "name": "level-05-npm-command",
+  "version": "1.0.0",
+  "description": "A test of npm command",
+  "keywords": [
+    "keyword"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "main"
+  },
+  "license": "ISC",
+  "author": "JM",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "run"
+  }
+}
