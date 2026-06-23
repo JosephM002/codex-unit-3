@@ -12,7 +12,7 @@ Knowing the difference between NodeJS and JavaScript will help you understand wh
 
 1. In `script.js`, store a value with `localStorage`.
 2. Use `document.querySelector` to select a `p` tag.
-3. Run the script.
+3. Run the script. Observe the error message.
 
 ## More Information
 
@@ -22,8 +22,9 @@ Knowing the difference between NodeJS and JavaScript will help you understand wh
 
 ## Usage Tips
 
-- Use `localStorage.setItem` to store a value.
-- `setItem` is a function that accepts a key and value.
+- Use `localStorage` to store values in the browser and retrieve them.
+- `setItem` is a method that accepts a key and value. Example: `localStorage.setItem("myCharacter", "Cookie Monster");`
+- `querySelector` is a method that accepts a CSS selector and returns an object. Example: `const listTag = document.querySelector("ul")`
 - [Documentation for localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage#examples)
 
 ## Hints
