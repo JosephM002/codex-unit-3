@@ -1,0 +1,11 @@
+h1 {
+  font-style: italic;
+}
+p {
+  color: red;
+}
+img {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 30%;
+}
