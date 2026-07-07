@@ -1,15 +1,16 @@
 import { useState } from "react";
 export function Main() {
   const results = useState(0);
+  let count = 0;
   debugger;
   return (
     <main>
-      <p>
-        {" "}
-        Semantic templates are made by removing all tags from the base file,
-        building templates and importing them in with the required semantic
-        tags.{" "}
-      </p>
+      <p>{count}</p>
+      <button onClick={handleClick}> Click Event </button>
     </main>
   );
+  function handleClick(event) {
+    event.preventDefault();
+    count = count + 1;
+  }
 }

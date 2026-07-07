@@ -8,13 +8,18 @@ export function Main() {
   useEffect(componentDidMount, []);
   return (
     <main>
+      <form onSubmit={handleSubmit}>
+        <input type="number" name="max">
+          <label></label>
+        </input>
+        <submit> Submit Here ! </submit>
+      </form>
       <p>{"DidMount: " + didMount}</p>
       <section>{"Characters: " + characters} </section>
       <p>
-        TODO: .map can be used to render data from an API by calling the api,
-        then using its info in a function that displays HTML with the API
-        values, then saving the HTML and rendering it in the main return
-        statement.
+        TODO: to accept user input in an API, build an input, convert the values
+        into a data object, convert that into a dataString and use the new
+        paramaters to Fetch the API.
       </p>
     </main>
   );
@@ -29,6 +34,20 @@ export function Main() {
     const details = data.map(toCharacters);
     setCharacters(details);
   }
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const data = {
+      max: form.elements.max.value,
+    };
+    const dataString = new URLSearchParams(data);
+    const waiting = await fetch(
+      "https://potterapi-fedeperin.vercel.app/en/characters" + "?" + dataString,
+    );
+    const receive = await waiting.json();
+    const details = results.map(toCharacters);
+    setCharacters(details);
+  }
   function componentDidMount(event) {
     event.preventDefault();
     setDidMount(true);
@@ -36,9 +55,10 @@ export function Main() {
   }
 }
 
-function toCharacters(dataItem) {
+function toCharacters(dataItem, index) {
+  const key = index + dataItem.fullName;
   const details = (
-    <details>
+    <details key={key}>
       <summary>{dataItem.fullName}</summary>
       {dataItem.description}
       <figure>
