@@ -1,1 +1,1 @@
-export default "TaDa!!!";
+export default "You ran JavaScript without a browser!";

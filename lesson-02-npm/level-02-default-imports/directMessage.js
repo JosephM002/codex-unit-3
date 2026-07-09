@@ -1,2 +1,1 @@
-export const directMessage =
-  "achieve a default import by 'import {variable} from './file.js''";
+export default "achieve a default import by 'import myVariable from './myFile.js''";
